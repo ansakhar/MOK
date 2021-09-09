@@ -1,0 +1,10 @@
+{
+"highscores": 
+[
+    { "name":"Jaakko Teppo","score":10000 },
+    { "name":"Smith Fessel", "score":8000 },
+    { "name":"Jones Bigss", "score":6000 },
+    { "name":"Farren Goods", "score":4000 },
+    { "name":"Milla Junes", "score":2000 }
+]
+}

@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+.Employee {
+  display: inline-block;
+  border: 1px dotted grey;
+  width: 300px;
+  height: 200px;
+  font-size: 14px;
+  margin: 8px;
+  padding: 4px;
+}
+.Employee-Names {
+  font-weight: bold;
+}
+
+.Employee img {
+  border-radius: 50%;
+  border: 2px solid #73AD21;
+  background: #73AD21;
+}

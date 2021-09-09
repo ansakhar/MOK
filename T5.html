@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>T5.html</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+class MyCalculator extends React.Component {
+    constructor(){
+  super()
+  this.state = {
+    number1: 0,
+    number2: 0,
+    result: 0
+  }
+}
+
+handleNumber1Change = (e) => {
+  this.setState({number1: event.target.value});
+}
+
+handleNumber2Change = (e) => {
+  this.setState({number2: event.target.value});
+}
+
+
+buttonPressed = (e, calc) => {
+  if (calc === '+') this.setState( { result: parseInt(this.state.number1) + parseInt(this.state.number2) });
+  else if (calc === '-') this.setState( { result: parseInt(this.state.number1) - parseInt(this.state.number2) });
+  else if (calc === '*') this.setState( { result: parseInt(this.state.number1) * parseInt(this.state.number2) });
+  else if (calc === '/') this.setState( { result: parseInt(this.state.number1) / parseInt(this.state.number2) });
+}
+
+  render() {
+    return (
+      <div>
+        <h1>Calculator</h1>
+        <div style={{margin:'5px'}}>
+            Number 1: <input value={this.state.number1} onChange={(e) => this.handleNumber1Change(e)} style={{textAlign:'right'}}/>
+        </div>
+        <div style={{margin:'5px'}}>
+          Number 2: <input value={this.state.number2} onChange={(e) => this.handleNumber2Change(e)} style={{textAlign:'right'}}/>
+        </div>
+        <div>
+          <button onClick={(e) => this.buttonPressed(e,'+')} style={{width:'30px', margin:'5px'}}>  +  </button>
+          <button onClick={(e) => this.buttonPressed(e,'-')} style={{width:'30px', margin:'5px'}}>  -  </button>
+          <button onClick={(e) => this.buttonPressed(e,'*')} style={{width:'30px', margin:'5px'}}>  *  </button>
+          <button onClick={(e) => this.buttonPressed(e,'/')} style={{width:'30px', margin:'5px'}}>  /  </button>
+        </div>
+        <div style={{margin:'5px'}}>
+            Result: <input value={this.state.result} style={{textAlign:'right'}} readOnly/>
+        </div>
+      </div>
+    )
+  }
+}
+ReactDOM.render(
+  <MyCalculator/>,
+  document.getElementById('root')
+);
+
+</script>
+</body>
+</html>

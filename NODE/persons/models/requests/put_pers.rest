@@ -1,0 +1,8 @@
+PUT http://localhost:3000/person/612f6a84f76f548530487c51
+Content-Type: application/json
+
+{
+    "name":"Uusi Nimi2",
+    "age":28,
+    "phone":"123167657"
+}

@@ -1,0 +1,7 @@
+POST http://localhost:3000/todos
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYW5zYWtoYXIiLCJpZCI6IjYxMzM4ZWFlMWQ4Njg3NWMxYzVlNzdlYyIsImlhdCI6MTYzMDg3NTY2NH0.rCsVANAQUKSH7-szcndB5FhIU3emHmxAHSNxnPntEIM
+
+{
+    "text": "Learn REST"
+}

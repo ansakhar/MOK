@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>T2.html</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+class Counter extends React.Component {
+  constructor(){
+    super()
+    this.state = {
+      count: 0,
+      isOn: false
+    }
+    this.startCounter = this.startCounter.bind(this)
+    this.stopCounter = this.stopCounter.bind(this)
+  }
+  startCounter() {
+    this.setState({
+      count: 0,
+      isOn: true
+    })
+    this.counter = setInterval(() => this.setState({
+      count: this.state.count+1
+    }), 1);
+  }
+  stopCounter() {
+    this.setState({isOn: false})
+    clearInterval(this.counter)
+  }
+  render() {
+    return(
+      <div>
+        <h3>timer: {this.state.count}</h3>
+        <button onClick={this.startCounter}>start</button>
+        <button onClick={this.stopCounter}>stop</button>
+      </div>
+    )
+  }
+}
+ReactDOM.render(
+  <Counter/>,
+  document.getElementById('root')
+);
+</script>
+  </body>
+</html>

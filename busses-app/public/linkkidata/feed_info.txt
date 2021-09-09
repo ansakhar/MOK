@@ -1,0 +1,2 @@
+"feed_publisher_name","feed_publisher_url","feed_lang","feed_start_date","feed_end_date","feed_version"
+"Jyväskylä","http://jkl.fi","en","20170308","20991230","201802051059"

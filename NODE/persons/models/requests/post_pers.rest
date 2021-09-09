@@ -1,0 +1,8 @@
+POST http://localhost:3000/person
+Content-Type: application/json
+
+{
+    "name": "Pekka Saarinen",
+    "age": 22,
+    "phone": "123167657"
+}

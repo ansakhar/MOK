@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>T4</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      class Movie extends React.Component {
+        render() {
+          return (
+            <div style={{border: '1px solid', margin:'8px'}}>
+              <div>{this.props.name}</div>
+              <div>{this.props.paikka}</div>
+              <div>{this.props.aika}</div>
+            </div>
+          );
+        }
+      }
+
+      class Movies extends React.Component {
+        render() {
+          return (
+            <div>
+              <Movie name='Ella Bella Bingo' paikka='Tennispalatsi, Helsinki, sali 4' aika='10:10:00 - 2020-02-13'/>
+              <Movie name='Joker' paikka='Tennispalatsi, Helsinki, sali 14' aika='18:15:00 - 2020-02-13'/>
+              <Movie name='Frozen 2' paikka='Tennispalatsi, Helsinki, sali 7' aika='20:00:00 - 2020-02-13'/>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(
+        <Movies/>,
+        document.getElementById('root')
+      );
+
+    </script>
+  </body>
+</html>

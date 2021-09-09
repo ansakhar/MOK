@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>T4F</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      function Movie(props) {
+          return (
+            <div style={{border: '1px solid', margin:'8px'}}>
+              <div>{props.nimi}</div>
+              <div>{props.paikka}</div>
+              <div>{props.aika}</div>
+            </div>
+          );
+        }
+
+      function Movies() {
+          return (
+            <div>
+              <Movie nimi='Ella Bella Bingo' paikka='Tennispalatsi, Helsinki, sali 4' aika='10:10:00 - 2020-02-13'/>
+              <Movie nimi='Joker' paikka='Tennispalatsi, Helsinki, sali 14' aika='18:15:00 - 2020-02-13'/>
+              <Movie nimi='Frozen 2' paikka='Tennispalatsi, Helsinki, sali 7' aika='20:00:00 - 2020-02-13'/>
+            </div>
+          );
+        }
+
+      ReactDOM.render(
+        <Movies/>,
+        document.getElementById('root')
+      );
+
+    </script>
+  </body>
+</html>
